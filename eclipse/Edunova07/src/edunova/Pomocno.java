@@ -22,6 +22,19 @@ public class Pomocno {
 				
 			}
 		}
+	
+	public static String ucitajString(String poruka) {
+		String s;
+		while(true) {
+			s = JOptionPane.showInputDialog(poruka);
+			if(s.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, 
+						"Obavezan unos");
+				continue;
+			}
+			return s;
+		}
+	}
 		
 		// return 0; ovaj je samo upisan da nam ne baca grešku
 	// dok upisujemo try catch. Poslije se može obrisati
