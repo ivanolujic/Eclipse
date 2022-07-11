@@ -15,10 +15,21 @@ public class Zadatak01 {
 				        .ucitajInt("Unesi broj predmeta")];
 		
 		Predmet predmet;
+		Profesor profesor;
 		for (int i=0;i<predmeti.length;i++) {
 			predmet = new Predmet();
 			predmet.setNaziv(Pomocno.ucitajString(
 					"Unesi naziv za "+ (i+1) + " predmet"));
+			
+			// OVO NE RADITI - null pointer exception
+			// predmet.getProfesor().setIme("Pero");
+			
+			profesor=new Profesor();
+			profesor.setIme("Pero");
+			profesor.setPrezime("Perić");
+			//predmet.setProfesor(profesor);
+		
+			
 			predmet.setOcjena(Pomocno.ucitajInt(
 					"Unesi ocjenu za "+ (i+1) + " predmet"));
 			
@@ -30,7 +41,9 @@ public class Zadatak01 {
 		int suma=0;
 		for(Predmet p:predmeti) {
 			suma+=p.getOcjena();
-			System.out.println(p.getNaziv() + 
+			System.out.println(
+					//p.getProfesor().getIme()+", "+
+					p.getNaziv() + 
 					": " + p.getOcjena());
 			}
 		
